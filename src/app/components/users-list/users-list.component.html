@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div
+      *ngFor="let user of userData"
+      class="col-md-3 m-3"
+      (click)="showUserDetails(user.id)"
+    >
+      <div class="card" style="width: 18rem">
+        <img [src]="user.avatar" class="card-img-top" alt="UserPhot" />
+        <div class="card-body">
+          <h5 class="card-title">
+            Name: {{ user.first_name }} {{ user.last_name }}
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pagination">
+  <nav>
+    <ul class="pagination pagination-lg">
+      <li
+        *ngFor="
+          let pageNumber of changePagesTotalToArray(totalPages || 1);
+          let index
+        "
+        [class]="currentPage == index ? 'active page-item' : 'page-item'"
+        (click)="changeThePage(pageNumber)"
+        aria-current="page"
+      >
+        <span class="page-link">{{ pageNumber }}</span>
+      </li>
+    </ul>
+  </nav>
+</div>

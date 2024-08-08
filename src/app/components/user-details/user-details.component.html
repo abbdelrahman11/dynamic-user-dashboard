@@ -1,0 +1,21 @@
+<div class="btn btn-primary ml-4 m-2" (click)="goBack()">Go Back</div>
+
+<div class="user-details">
+  <div class="card" style="width: 20rem">
+    <img
+      [src]="userDstails ? userDstails.avatar : ''"
+      class="card-img-top"
+      alt="UserPhot"
+    />
+    <div class="card-body">
+      <h5 class="card-title">
+        Email: {{ userDstails ? userDstails.email : "" }}
+      </h5>
+      <h5 class="card-title">
+        Name:
+        {{ userDstails ? userDstails.first_name : "" }}
+        {{ userDstails ? userDstails.last_name : "" }}
+      </h5>
+    </div>
+  </div>
+</div>
