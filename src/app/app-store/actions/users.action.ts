@@ -9,12 +9,11 @@ export const loadUsers = createAction(
   '[users] loadUsers',
   props<{ users: UserRes }>()
 );
-
 export const getUserDetails = createAction(
   '[users] getUserDetails',
-  props<{ users: UserDetailsRes }>()
+  props<{ id: string | null }>()
 );
-export const getFilteredUsers = createAction(
-  '[users] getFilteredUsers',
-  props<{ users: User }>()
+export const loadUserDetails = createAction(
+  '[users] loadUserDetails',
+  props<{ userDetails: UserDetailsRes }>()
 );

@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
       .get('search')
       ?.valueChanges.pipe(debounceTime(500))
       .subscribe((res) => {
-        if (res) {
+        if (res.trim()) {
           this.filterUsers(res);
         } else {
           this.showTheFilter = false;
